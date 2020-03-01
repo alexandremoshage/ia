@@ -48,6 +48,26 @@
                 erros += contaQuantidadeItensRepetidosArray(coluna)
             }
 
+
+
+            //conta quantidadeErrosQuadrado
+            for (var i = 0; i <= 8; i + 3) {
+                var quadrado = []
+                for (var j = 0; j <= 9; j + 3) {
+                    quadrado[quadrado.length] = p_sudoku[i][j];
+                    quadrado[quadrado.length] = p_sudoku[i][j + 1];
+                    quadrado[quadrado.length] = p_sudoku[i][j + 2];
+
+                    quadrado[quadrado.length] = p_sudoku[i + 1][j];
+                    quadrado[quadrado.length] = p_sudoku[i + 1][j + 1];
+                    quadrado[quadrado.length] = p_sudoku[i + 1][j + 2];
+
+                    quadrado[quadrado.length] = p_sudoku[i + 2][j];
+                    quadrado[quadrado.length] = p_sudoku[i + 2][j + 1];
+                    quadrado[quadrado.length] = p_sudoku[i + 2][j + 2];
+                    erros += contaQuantidadeItensRepetidosArray(coluna)
+                }
+            }
             return erros
         }
 
