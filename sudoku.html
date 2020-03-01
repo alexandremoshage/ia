@@ -10,8 +10,8 @@
 
         function quebraStringEmMatrizSudoku() {
             var linha = 0
-            for (var i = 0; i < a.length; i++) {
-                mapaSudoku[linha][mapaSudoku[linha].length] = a[i]
+            for (var i = 0; i < textoSudoku.length; i++) {
+                mapaSudoku[linha][mapaSudoku[linha].length] = textoSudoku[i]
                 if (mapaSudoku[linha].length == 9 && linha < 8) {
                     linha = linha + 1;
                     mapaSudoku[linha] = [];
@@ -26,16 +26,23 @@
 
         function contaQuantidadeDeErros(p_sudoku) {
             let erros = 0;
-
-
+            for (var i = 0; i < p_sudoku.length; i++) {
+                erros += contaQuantidadeErrosLinha(p_sudoku[i]) 
+            }
 
             return erros
         }
 
-        function contaQuantidadeErrosLinha() {
+        function contaQuantidadeErrosLinha(p_linha) {
             let erros = 0;
-
-
+            for (var i = 1; i <= 9; i++) {
+                let quantidadeNumeroRepetidos  = p_linha.filter(function (a) { a == 1}).length
+                if (quantidadeNumeroRepetidos > 0) {
+                    erros += quantidadeNumeroRepetidos - 1;
+                }
+                
+            }
+           
             return erros
         }
 
