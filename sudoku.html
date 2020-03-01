@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>    
+
+        function quebraStringEmMatrizSudoku() {
+            var linha = 0
+            for (var i = 0; i < a.length; i++) {
+                mapaSudoku[linha][mapaSudoku[linha].length] = a[i]
+                if (mapaSudoku[linha].length == 9 && linha < 8) {
+                    linha = linha + 1;
+                    mapaSudoku[linha] = [];
+                }
+            }
+        }
+
+        function gerarNumeroAleatorio(min, max) {
+            return parseInt(Math.random() * (max - min) + min);
+        }
+
+
+        function contaQuantidadeDeErros(p_sudoku) {
+            var erros = 0;
+
+            for (var i = 0; i < p_sudoku.length; i++) {
+                for (var j = 0; j < p_sudoku[i].length; j++) {
+                    if (mapaSudoku[i][j] == 0) {
+                        mapaSudoku[i][j] = gerarNumeroAleatorio(1, 9)
+                    }
+                }
+            }
+
+            return erros
+        }
+
+
+        var textoSudoku = "900000001051200030000980000680740000730000908010058670008100000002007090190004060";
+        var mapaSudoku = [];
+        mapaSudoku[0] = [];
+        quebraStringEmMatrizSudoku();
+        for (var i = 0; i < mapaSudoku.length; i++) {
+            for (var j = 0; j < mapaSudoku[i].length; j++) {
+                if (mapaSudoku[i][j] == 0) {
+                    mapaSudoku[i][j] = gerarNumeroAleatorio(1,9)
+                }
+            }
+        }
+
+      
+        var quantidadeErros = contaQuantidadeDeErros(mapaSudoku)
+
+
+        console.log(quantidadeErros)
+
+    </script>
+</body>
+</html>
