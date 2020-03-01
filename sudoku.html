@@ -46,14 +46,14 @@
                 coluna[coluna.length] = p_sudoku[7][i];
                 coluna[coluna.length] = p_sudoku[8][i];
                 erros += contaQuantidadeItensRepetidosArray(coluna)
-            }
+            } 
 
 
 
             //conta quantidadeErrosQuadrado
-            for (var i = 0; i <= 8; i + 3) {
-                var quadrado = []
-                for (var j = 0; j <= 9; j + 3) {
+            for (var i = 0; i <= 8; i += 3) {
+                for (var j = 0; j <= 8; j += 3) {
+                let quadrado = []
                     quadrado[quadrado.length] = p_sudoku[i][j];
                     quadrado[quadrado.length] = p_sudoku[i][j + 1];
                     quadrado[quadrado.length] = p_sudoku[i][j + 2];
@@ -65,7 +65,8 @@
                     quadrado[quadrado.length] = p_sudoku[i + 2][j];
                     quadrado[quadrado.length] = p_sudoku[i + 2][j + 1];
                     quadrado[quadrado.length] = p_sudoku[i + 2][j + 2];
-                    erros += contaQuantidadeItensRepetidosArray(coluna)
+                    console.log(quadrado);
+                    erros += contaQuantidadeItensRepetidosArray(quadrado)
                 }
             }
             return erros
