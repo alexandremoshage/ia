@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body>
-    <script>    
+    <script>
 
         function quebraStringEmMatrizSudoku() {
             var linha = 0
@@ -25,19 +25,38 @@
 
 
         function contaQuantidadeDeErros(p_sudoku) {
-            var erros = 0;
+            let erros = 0;
 
-            for (var i = 0; i < p_sudoku.length; i++) {
-                for (var j = 0; j < p_sudoku[i].length; j++) {
-                    if (mapaSudoku[i][j] == 0) {
-                        mapaSudoku[i][j] = gerarNumeroAleatorio(1, 9)
-                    }
-                }
-            }
+
 
             return erros
         }
 
+        function contaQuantidadeErrosLinha() {
+            let erros = 0;
+
+
+            return erros
+        }
+
+
+
+        function contaQuantidadeErrosColuna() {
+            let erros = 0;
+
+
+            return erros
+        }
+
+
+
+
+         function contaQuantidadeErrosQuadrante() {
+            let erros = 0;
+
+
+            return erros
+        }
 
         var textoSudoku = "900000001051200030000980000680740000730000908010058670008100000002007090190004060";
         var mapaSudoku = [];
@@ -46,12 +65,12 @@
         for (var i = 0; i < mapaSudoku.length; i++) {
             for (var j = 0; j < mapaSudoku[i].length; j++) {
                 if (mapaSudoku[i][j] == 0) {
-                    mapaSudoku[i][j] = gerarNumeroAleatorio(1,9)
+                    mapaSudoku[i][j] = gerarNumeroAleatorio(1, 9)
                 }
             }
         }
 
-      
+
         var quantidadeErros = contaQuantidadeDeErros(mapaSudoku)
 
 
