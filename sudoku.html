@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body>
-    erros <h1 id="erros" ></h1>
+    erros <h1 id="erros"></h1>
     <script>
 
         function quebraStringEmMatrizSudoku() {
@@ -27,30 +27,38 @@
 
         function contaQuantidadeDeErros(p_sudoku) {
             let erros = 0;
+            //conta quantidade de erros na linha
             for (var i = 0; i < p_sudoku.length; i++) {
-                erros += contaQuantidadeErrosLinha(p_sudoku[i]) 
+                erros += contaQuantidadeItensRepetidosArray(p_sudoku[i])
+            }
+
+
+            //conta quantidade de erros coluna
+            for (var i = 0; i <= 8; i++) {
+                coluna = []
+                coluna[coluna.length] = p_sudoku[0][i];
+                coluna[coluna.length] = p_sudoku[1][i];
+                coluna[coluna.length] = p_sudoku[2][i];
+                coluna[coluna.length] = p_sudoku[3][i];
+                coluna[coluna.length] = p_sudoku[4][i];
+                coluna[coluna.length] = p_sudoku[5][i];
+                coluna[coluna.length] = p_sudoku[6][i];
+                coluna[coluna.length] = p_sudoku[7][i];
+                coluna[coluna.length] = p_sudoku[8][i];
+                erros += contaQuantidadeItensRepetidosArray(coluna)
             }
 
             return erros
         }
 
-        function contaQuantidadeErrosLinha(p_linha) {
+        function contaQuantidadeItensRepetidosArray(p_linha) {
             let erros = 0;
             for (var i = 1; i <= 9; i++) {
-                let quantidadeNumeroRepetidos  = p_linha.filter(function (a) {return a == i}).length
+                let quantidadeNumeroRepetidos = p_linha.filter(function (a) { return a == i }).length
                 if (quantidadeNumeroRepetidos > 0) {
                     erros += quantidadeNumeroRepetidos - 1;
                 }
             }
-           
-            return erros
-        }
-
-
-
-        function contaQuantidadeErrosColuna() {
-            let erros = 0;
-
 
             return erros
         }
@@ -58,7 +66,9 @@
 
 
 
-         function contaQuantidadeErrosQuadrante() {
+
+
+        function contaQuantidadeErrosQuadrante() {
             let erros = 0;
 
 
