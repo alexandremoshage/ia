@@ -6,12 +6,13 @@
     <title></title>
 </head>
 <body>
+    erros <h1 id="erros" ></h1>
     <script>
 
         function quebraStringEmMatrizSudoku() {
             var linha = 0
             for (var i = 0; i < textoSudoku.length; i++) {
-                mapaSudoku[linha][mapaSudoku[linha].length] = textoSudoku[i]
+                mapaSudoku[linha][mapaSudoku[linha].length] = parseInt(textoSudoku[i])
                 if (mapaSudoku[linha].length == 9 && linha < 8) {
                     linha = linha + 1;
                     mapaSudoku[linha] = [];
@@ -36,11 +37,10 @@
         function contaQuantidadeErrosLinha(p_linha) {
             let erros = 0;
             for (var i = 1; i <= 9; i++) {
-                let quantidadeNumeroRepetidos  = p_linha.filter(function (a) { a == 1}).length
+                let quantidadeNumeroRepetidos  = p_linha.filter(function (a) {return a == i}).length
                 if (quantidadeNumeroRepetidos > 0) {
                     erros += quantidadeNumeroRepetidos - 1;
                 }
-                
             }
            
             return erros
@@ -79,8 +79,8 @@
 
 
         var quantidadeErros = contaQuantidadeDeErros(mapaSudoku)
-
-
+        document.getElementById("erros").innerHTML = quantidadeErros
+        console.log(mapaSudoku)
         console.log(quantidadeErros)
 
     </script>
