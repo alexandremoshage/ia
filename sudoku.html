@@ -7,7 +7,33 @@
 </head>
 <body>
     erros <h1 id="erros"></h1>
+
+
+    <input type="file" id="input" onchange="processarArquivo(this.files)">
+
+
     <script>
+
+        function processarArquivo(p_arquivo) {
+            var textoSudoku = "900000001051200030000980000680740000730000908010058670008100000002007090190004060";
+            var mapaSudoku = [];
+            mapaSudoku[0] = [];
+            quebraStringEmMatrizSudoku();
+            for (var i = 0; i < mapaSudoku.length; i++) {
+                for (var j = 0; j < mapaSudoku[i].length; j++) {
+                    if (mapaSudoku[i][j] == 0) {
+                        mapaSudoku[i][j] = gerarNumeroAleatorio(1, 9)
+                    }
+                }
+            }
+
+
+            var quantidadeErros = contaQuantidadeDeErros(mapaSudoku)
+            document.getElementById("erros").innerHTML = quantidadeErros
+        }
+
+
+
 
         function quebraStringEmMatrizSudoku() {
             var linha = 0
@@ -46,14 +72,14 @@
                 coluna[coluna.length] = p_sudoku[7][i];
                 coluna[coluna.length] = p_sudoku[8][i];
                 erros += contaQuantidadeItensRepetidosArray(coluna)
-            } 
+            }
 
 
 
             //conta quantidadeErrosQuadrado
             for (var i = 0; i <= 8; i += 3) {
                 for (var j = 0; j <= 8; j += 3) {
-                let quadrado = []
+                    let quadrado = []
                     quadrado[quadrado.length] = p_sudoku[i][j];
                     quadrado[quadrado.length] = p_sudoku[i][j + 1];
                     quadrado[quadrado.length] = p_sudoku[i][j + 2];
@@ -85,10 +111,6 @@
         }
 
 
-
-
-
-
         function contaQuantidadeErrosQuadrante() {
             let erros = 0;
 
@@ -96,24 +118,6 @@
             return erros
         }
 
-        var textoSudoku = "900000001051200030000980000680740000730000908010058670008100000002007090190004060";
-        var mapaSudoku = [];
-        mapaSudoku[0] = [];
-        quebraStringEmMatrizSudoku();
-        for (var i = 0; i < mapaSudoku.length; i++) {
-            for (var j = 0; j < mapaSudoku[i].length; j++) {
-                if (mapaSudoku[i][j] == 0) {
-                    mapaSudoku[i][j] = gerarNumeroAleatorio(1, 9)
-                }
-            }
-        }
-
-
-
-        var quantidadeErros = contaQuantidadeDeErros(mapaSudoku)
-        document.getElementById("erros").innerHTML = quantidadeErros
-        console.log(mapaSudoku)
-        console.log(quantidadeErros)
 
     </script>
 </body>
