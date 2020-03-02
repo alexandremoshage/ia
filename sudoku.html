@@ -51,7 +51,7 @@
             textoSudoku = e.target.result
 
 
-            mapaSudoku[0] = [];
+            
             transformaStringEmMatrizSudoku();
             for (var i = 0; i < 100; i++) {
                 cromossomo = gerarComossomo()
@@ -73,6 +73,7 @@
         }
 
         function transformaStringEmMatrizSudoku() {
+            mapaSudoku[0] = [];
             var linha = 0
             for (var i = 0; i < textoSudoku.length; i++) {
                 mapaSudoku[linha][mapaSudoku[linha].length] = parseInt(textoSudoku[i])
