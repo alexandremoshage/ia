@@ -9,14 +9,36 @@
     erros <h1 id="erros"></h1>
 
 
-    <input type="file" id="input" onchange="processarArquivo(this.files)">
+    <input type="file" id="input" onchange="lerArquivo(this.files[0])">
 
 
     <script>
+        var textoSudoku = "";
+        var mapaSudoku = [];
 
-        function processarArquivo(p_arquivo) {
-            var textoSudoku = "900000001051200030000980000680740000730000908010058670008100000002007090190004060";
-            var mapaSudoku = [];
+        function lerArquivo(p_arquivo) {
+
+
+
+            var file = p_arquivo
+            var textType = /text.*/;
+
+            if (file.type.match(textType)) {
+                var reader = new FileReader();
+                reader.onload = processarArquivo;
+                reader.readAsText(file);
+            } else {
+                fileDisplayArea.innerText = "File not supported!"
+            }
+
+
+        }
+
+
+        function processarArquivo(e) {
+            textoSudoku = e.target.result
+
+
             mapaSudoku[0] = [];
             quebraStringEmMatrizSudoku();
             for (var i = 0; i < mapaSudoku.length; i++) {
@@ -30,10 +52,9 @@
 
             var quantidadeErros = contaQuantidadeDeErros(mapaSudoku)
             document.getElementById("erros").innerHTML = quantidadeErros
+
+
         }
-
-
-
 
         function quebraStringEmMatrizSudoku() {
             var linha = 0
@@ -109,16 +130,7 @@
 
             return erros
         }
-
-
-        function contaQuantidadeErrosQuadrante() {
-            let erros = 0;
-
-
-            return erros
-        }
-
-
+         
     </script>
 </body>
 </html>
