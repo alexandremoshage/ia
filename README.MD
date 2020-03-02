@@ -45,7 +45,7 @@ Exemplo de estado inicial
 
 Imagem do estado inicial
 
-![Estado inicial](sudoku.png)
+![Estado inicial](/src/images/sudoku.png)
 
 ## 📋 Informações adicionais
 
