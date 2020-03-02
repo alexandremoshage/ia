@@ -40,7 +40,7 @@
 
 
             mapaSudoku[0] = [];
-            quebraStringEmMatrizSudoku();
+            transformaStringEmMatrizSudoku();
             for (var i = 0; i < mapaSudoku.length; i++) {
                 for (var j = 0; j < mapaSudoku[i].length; j++) {
                     if (mapaSudoku[i][j] == 0) {
@@ -56,7 +56,7 @@
 
         }
 
-        function quebraStringEmMatrizSudoku() {
+        function transformaStringEmMatrizSudoku() {
             var linha = 0
             for (var i = 0; i < textoSudoku.length; i++) {
                 mapaSudoku[linha][mapaSudoku[linha].length] = parseInt(textoSudoku[i])
@@ -70,7 +70,6 @@
         function gerarNumeroAleatorio(min, max) {
             return parseInt(Math.random() * (max - min) + min);
         }
-
 
         function contaQuantidadeDeErros(p_sudoku) {
             let erros = 0;
