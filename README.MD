@@ -1,18 +1,18 @@
 # 🤖 Trabalho de IA - Sudoku
 
-### 📝 Instruções
+📆 Prazo de entrega: 06/03/2020 até as 18:30 via AVA.
 
-Prazo de entrega: 06/03/2020 até as 18:30
+📊 Relatório:
 
-- Relatório:
-  - descrevendo o método utilizado e o motivo de tal escolha
-  - indicando a linguagem utilizada
-  - explicando como utilizar o aplicativo
-  - expondo os resultados obtidos. (exemplos de estados iniciais
-    apresentadas e soluções obtidas)
-- Código fonte e executável
+- descrevendo o método utilizado e o motivo de tal escolha
+- indicando a linguagem utilizada
+- explicando como utilizar o aplicativo
+- expondo os resultados obtidos. (exemplos de estados iniciais
+  apresentadas e soluções obtidas)
 
-### 📃 Descrição do trabalho
+👾 Código fonte e executável
+
+## 📃 Descrição do trabalho
 
 O Projeto consiste em implementar um agente capaz de resolver autonomamente um
 desafio de Sudoku. O sistema deve:
@@ -24,7 +24,7 @@ desafio de Sudoku. O sistema deve:
 - Exibir a solução encontrada. (Preferencialmente, destacar os valores definidos no
   estado inicial e valores encontrados pelo sistema).
 
-### 🚩 Arquivo do estado inicial
+## 🚩 Arquivo do estado inicial
 
 O estado inicial do tabuleiro do jogo sudoku deve ser lido de um arquivo \*.txt.
 Como o tabuleiro contém 81 posições, o arquivo deve conter 81 dígitos, cada um
@@ -44,16 +44,17 @@ Exemplo de estado inicial
 ```
 
 Imagem do estado inicial
+
 ![Estado inicial](sudoku.png)
 
-### 📋 Informações adicionais
+## 📋 Informações adicionais
 
 - O programa pode ser implementado em qualquer linguagem.
 - O programa deverá ser executado em Windows (se bibliotecas auxiliares forem
   usadas, todos os arquivos necessários deverão ser incluídos no projeto para que
   ele possa ser executado).
 
-### 💯 Forma de avaliação
+## 💯 Forma de avaliação
 
 O trabalho será avaliado se:
 
