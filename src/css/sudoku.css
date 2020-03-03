@@ -2,7 +2,6 @@
   min-height: 22.75rem;
   margin-bottom: 1em;
 }
-
 /*cell (wrapper) contains both cell input and candidates div*/
 .sudoku-board-cell {
   display: inline-block;
