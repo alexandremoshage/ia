@@ -65,9 +65,9 @@ function SudokuSolver() {
       return isNaN(v) ? 0 : +v;
     });
 
-    if (puzzle.length !== 81) return "Puzzle is not valid.";
+    if (puzzle.length !== 81) return "Sudoku inválido.";
     return !get_candidate(0)
-      ? "No solution found."
+      ? "Sem soluções encontradas."
       : result === "chunks"
       ? chunk_in_groups(puzzle_table)
       : result === "array"
