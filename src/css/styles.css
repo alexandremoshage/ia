@@ -1,8 +1,84 @@
-table * {
-  padding: 9px;
-  font-size: 30px;
+body,
+td,
+p {
+  font: 12px "Trebuchet MS", Helvetica, sans-serif;
 }
 
-.original {
+a,
+a:visited {
+  color: blue;
+}
+
+a:hover {
   color: red;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  padding: 20px 0;
+  width: 500px;
+  margin: auto;
+  background: #89c4f4;
+  border-radius: 10px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+table {
+  position: relative;
+  margin: 0 auto;
+}
+
+.board-block {
+  position: relative;
+  margin: 0 auto;
+  background: white;
+  border: 3px solid #89c4f4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.input {
+  border: 0px;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+}
+
+.cell {
+  width: 1em;
+  height: 1em;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  padding: 0.3em;
+}
+
+.cell1 {
+  width: 1em;
+  height: 1em;
+  border-bottom: 2px solid;
+  border-left: 1px solid;
+  padding: 0.3em;
+}
+
+.cell2 {
+  width: 1em;
+  height: 1em;
+  border-bottom: 1px solid;
+  border-left: 2px solid;
+  padding: 0.3em;
+}
+
+.cell3 {
+  width: 1em;
+  height: 1em;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  padding: 0.3em;
+}
+
+.table {
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-collapse: collapse;
 }
