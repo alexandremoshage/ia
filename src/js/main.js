@@ -17,7 +17,7 @@ function solve() {
   var t = (new Date().getTime() - time_beg) / 1000.0;
 
   document.getElementById("runtime").innerHTML =
-    "Solved puzzle in " + t + " seconds ( " + t * 1000.0 + " ms ).";
+    "Resolvido em " + t + " segundos ( " + t * 1000.0 + " ms ).";
   s = "";
 
   for (var z = 0; z < 81; ++z) {
