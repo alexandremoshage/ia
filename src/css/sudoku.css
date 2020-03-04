@@ -1,8 +1,13 @@
+/* sudokuJS v0.4.4 - CSS
+// https://github.com/pocketjoso/sudokuJS
+// Author: Jonas Ohlsson
+// License: MIT
+*/
+
 .sudoku-board {
   min-height: 22.75rem;
   margin-bottom: 1em;
 }
-
 /*cell (wrapper) contains both cell input and candidates div*/
 .sudoku-board-cell {
   display: inline-block;

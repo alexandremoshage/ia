@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title>Trabalho de IA - Sudoku</title>
+  <link rel="stylesheet" media="all" type="text/css" href="src/css/styles.css">
+</head>
+
+<body onLoad='draw_9x9();'>
+  <div class="container">
+    <h1 style="padding-bottom: 20px;">Trabalho de IA - Sudoku</h1>
+    <div style="text-align: left; padding: 0 20px 20px 20px;">
+      Sudoku, por vezes escrito Su Doku, é um jogo baseado na colocação lógica de números. O objetivo
+      do jogo é a colocação de números de 1 a 9 em cada uma das células vazias numa grade de 9x9, constituída por 3x3
+      subgrades chamadas regiões. O quebra-cabeça contém algumas pistas iniciais, que são números inseridos em algumas
+      células, de maneira a permitir uma indução ou dedução dos números em células que estejam vazias. Cada coluna,
+      linha e região só pode ter um número de cada um dos 1 a 9. Resolver o problema requer apenas raciocínio lógico e
+      algum tempo.
+    </div>
+    <div class="board-block">
+      <div style="padding-bottom: 15px;">
+        Carregar arquivo:
+        <input type="file" id="input" onchange="lerArquivo(this.files[0])">
+      </div>
+      <table>
+        <tr style="vertical-align: top">
+          <td style="padding: 0 32px;">
+            <span id="9x9"></span>
+          </td>
+        </tr>
+      </table>
+      <div style="padding-top: 15px;">
+        <div>
+          <input type="button" value="Resolver Sudoku" onClick="solve();">
+          <input type="button" value="Limpar Sudoku" onClick="clear_input();">
+        </div>
+        <div id="runtime" style="color: gray; padding-top: 10px;">
+          Resolvido em 0 segundos( 0 ms ).
+        </div>
+      </div>
+    </div>
+  </div>
+  <script language="javascript" src="src/js/new.js"></script>
+  <script language="javascript" src="src/js/main.js"></script>
+  <script type="text/javascript" src="src/js/load.js"></script>
+</body>
+
+</html>
