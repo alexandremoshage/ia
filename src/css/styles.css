@@ -24,9 +24,15 @@ a:hover {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-table {
+.original {
+  text-shadow: 2px 2px 5px blue;
+}
+
+table * {
   position: relative;
   margin: 0 auto;
+  padding: 9.6px;
+  font-size: 30px;
 }
 
 .board-block {
