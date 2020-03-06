@@ -20,8 +20,11 @@
     </div>
     <div class="board-block">
       <div style="padding-bottom: 15px;">
-        erros <h1 id="erros"></h1>
-        Carregar arquivo:
+        <h4> Quantidade de erros: </h4>
+        <h3>
+          <div id="erros" style="color: red; padding-top: 10px;"></div>
+        </h3>
+        <h4>Carregar arquivo:</h4>
         <input type="file" id="input" onchange="lerArquivo(this.files[0])">
         <table id="sudoku" class="table"></table>
         <div style="color: gray; padding-top: 10px;">
